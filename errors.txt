@@ -1,0 +1,13 @@
+
+super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+
+super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+
+super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'admin'@'localhost' (using password: YES)")
+
+NameError: global name 'dab' is not defined

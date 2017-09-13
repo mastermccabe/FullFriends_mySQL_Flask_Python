@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js ">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
+  </script>
+  <title>Users</title>
+</head>
+
+<body>
+  <!-- {{ all_users }} -->
+  <div class="form-group container">
+    <h1>Friends!!</h1>
+    <!-- with all the data we can then construct a more structured output -->
+    {% for users in all_users: %}
+
+    <p>user_ID: {{ users['id'] }}</p>
+    <ul>
+      <li>First Name: {{ users['first_name'] }}, Last Name: {{ users['last_name'] }}, Age: {{ users['age'] }}</li>
+
+    </ul>
+
+    {% endfor %}
+  </div>
+  <hr>
+
+  <div class="form-group container">
+    <h2>Add a Friend</h2>
+    <form action='/users' method='POST'>
+      <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+      <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+      <label for="age">Age:<input type="text" name="age" id="age"></label>
+      <input type="submit" value="Add">
+    </form>
+    <form action='/update_age' method='POST'>
+      <label for="user_id2">user_id:<input type="text" name="user_id2" id="user_id2"></label>
+      <label for="age2">Age:<input type="text" name="age2" id="age2"></label>
+      <input type="submit" value="Add">
+    </form>
+
+    <form action='/delete_users' method='POST'>
+      <label for="user_id">Delete id:<input type="text" name="user_id" id="user_id"></label>
+      <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp (NOT Reversible)</p>
+      <input type="submit" value="Add">
+    </form>
+  </div>
+</body>
+
+</html>
